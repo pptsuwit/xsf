@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .text-green {
+      color: green;
+    }
+  </style>
+  <body>
+    <ul id="list">
+      <!-- <li>test</li> -->
+    </ul>
+  </body>
+</html>
+
+<script>
+  input = [
+    { name: "A", age: "30" },
+    { name: "B", age: "9" },
+    { name: "C", age: "20" },
+    { name: "D", age: "18" },
+    { name: "E", age: "11" },
+    { name: "F", age: "60" },
+    { name: "G", age: "27" },
+    { name: "H", age: "90" },
+    { name: "I", age: "21" },
+    { name: "J", age: "12" },
+  ];
+
+  function Result(input) {
+    input.map((item) => {
+      const li = document.createElement("li");
+      const p = document.createElement("p");
+      const result = document.createElement("span");
+
+      p.innerText = `This is a `;
+      p.style.color = "green";
+      result.innerText = `${item.name},`;
+      result.style.color = "green";
+      result.style.textDecorationLine = "underline";
+      li.appendChild(p);
+      p.appendChild(result);
+      document.getElementById("list").appendChild(li);
+    });
+  }
+
+  Result(input);
+</script>
